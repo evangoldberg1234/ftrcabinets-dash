@@ -183,3 +183,35 @@ a:hover { color: var(--white); }
 .bid-due { font-size: 0.78rem; font-weight: 600; color: #ffd27a; background: rgba(255,210,122,0.12); border: 1px solid rgba(255,210,122,0.4); padding: 2px 8px; border-radius: 6px; }
 .timing-evidence { font-size: 0.8rem; color: var(--muted); line-height: 1.35; margin-bottom: 4px; }
 .timing-evidence a { color: var(--gold-dim); margin-left: 4px; }
+
+
+/* Dash tabs + visitors */
+.dash-tabs { display: flex; gap: 0.35rem; }
+.dash-tabs.hidden { display: none !important; }
+.tab-btn {
+  background: transparent; border: 1px solid var(--line); color: var(--muted);
+  border-radius: 999px; padding: 0.4rem 0.85rem; font: inherit; font-size: 0.82rem;
+  font-weight: 600; cursor: pointer;
+}
+.tab-btn.active, .tab-btn:hover { color: var(--gold); border-color: var(--gold); }
+.visitor-stats { gap: 0.6rem; }
+.stat-chip {
+  background: var(--bg-soft); border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.55rem 0.8rem; min-width: 7rem;
+}
+.stat-chip .n { display: block; color: var(--gold); font-weight: 700; font-size: 1.15rem; }
+.stat-chip .l { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.visitor-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.25rem;
+}
+@media (max-width: 900px) { .visitor-grid { grid-template-columns: 1fr; } }
+.vis-h { font-size: 0.95rem; margin: 0 0 0.65rem; color: var(--gold); }
+.visitor-list, .event-list, .referrer-list { display: grid; gap: 0.55rem; }
+.v-card, .e-row, .r-row {
+  background: var(--bg-elev); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; padding: 0.75rem 0.9rem; font-size: 0.88rem;
+}
+.v-card .who { font-weight: 600; }
+.v-card .meta, .e-row .meta, .r-row .meta { color: var(--muted); font-size: 0.8rem; margin-top: 0.2rem; }
+.e-row .ev { color: var(--gold); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; }
+.v-card .pages { color: var(--muted); font-size: 0.8rem; margin-top: 0.2rem; word-break: break-word; }

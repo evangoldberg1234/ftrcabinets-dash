@@ -17,6 +17,10 @@
     <header class="crm-header">
       <div class="crm-header-inner">
         <a class="logo" href="https://ftrkitchens.com/">FTR <span>Kitchens</span></a>
+        <nav id="dash-tabs" class="dash-tabs hidden" aria-label="Dash sections">
+          <button type="button" class="tab-btn active" data-tab="leads">Leads</button>
+          <button type="button" class="tab-btn" data-tab="visitors">Site visitors</button>
+        </nav>
         <div class="crm-header-right">
           <a class="btn btn-ghost" href="https://form.jotform.com/262806148415155" target="_blank" rel="noopener">Quote form</a>
           <span id="user-label" class="user-label hidden"></span>
@@ -93,6 +97,28 @@
         <div id="cards" class="cards"></div>
         <p id="empty-msg" class="empty-msg hidden">No leads match these filters.</p>
       </section>
+
+      <section id="visitors-screen" class="crm-screen visitors-screen hidden">
+        <div class="crm-toolbar">
+          <div class="toolbar-row">
+            <h1>Site visitors</h1>
+            <button id="visitors-refresh" class="btn btn-ghost" type="button">Refresh</button>
+            <p id="visitors-since" class="muted" style="margin:0;font-size:0.85rem"></p>
+          </div>
+          <div class="toolbar-row filters visitor-stats" id="visitor-stats"></div>
+        </div>
+        <p id="visitors-msg" class="empty-msg hidden"></p>
+        <div class="visitor-grid">
+          <div>
+            <h2 class="vis-h">Recent visitors</h2>
+            <div id="visitor-list" class="visitor-list"></div>
+          </div>
+          <div>
+            <h2 class="vis-h">Recent clicks</h2>
+            <div id="event-list" class="event-list"></div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
@@ -111,5 +137,6 @@
   </dialog>
 
   <script src="crm.js"></script>
+  <script src="visitors.js"></script>
 </body>
 </html>

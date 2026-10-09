@@ -8,6 +8,7 @@
   const sb = window.supabase.createClient(cfg.url, cfg.anonKey, {
     auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
   });
+  window.FTR_SB = sb; // shared with visitors.js (one auth client per page)
 
   const $ = (id) => document.getElementById(id);
   const authScreen = $("auth-screen");
@@ -123,6 +124,7 @@
     crmScreen.classList.add("hidden");
     userLabel.classList.add("hidden");
     btnSignout.classList.add("hidden");
+    document.dispatchEvent(new CustomEvent("ftr:auth", { detail: { signedIn: false } }));
   }
   function showCrm(session) {
     currentUser = session.user;
@@ -131,6 +133,7 @@
     userLabel.textContent = session.user.email || "";
     userLabel.classList.remove("hidden");
     btnSignout.classList.remove("hidden");
+    document.dispatchEvent(new CustomEvent("ftr:auth", { detail: { signedIn: true } }));
   }
 
   async function loadLeads() {
